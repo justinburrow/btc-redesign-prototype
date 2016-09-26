@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+    <title>BTC UI Redesign</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory-->
+    <!-- build:css styles/vendor.css-->
+    <!-- bower:css-->
+    <link rel="stylesheet" href="/bower_components/font-awesome/css/font-awesome.css">
+    <!-- endbower-->
+    <!-- endbuild-->
+    <!-- build:css styles/main.css-->
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- endbuild-->
+    <!-- build:js scripts/vendor/modernizr.js-->
+    <script src="../bower_components/modernizr/modernizr.js"></script>
+    <!-- endbuild-->
+  </head>
+  <body data-ng-app="btcApp" data-ng-controller="mainCtrl as btc">
+    <div class="nav-panel">
+      <div class="nav-holder">
+        <div class="search">
+          <form action="#" class="search-form">
+            <input type="text" placeholder="Search" class="search-input">
+            <button type="submit" value="" class="search-btn"><i class="fa fa-search"></i></button>
+          </form>
+        </div>
+        <ul class="top no-dots">
+          <li><i class="icon-my-business"></i>My Business</li>
+          <ul class="secondary no-dot">
+            <li><a ui-sref="other" data-ng-click="btc.showNav = false">Contacts</a></li>
+            <li><a ui-sref="other" data-ng-click="btc.showNav = false">Performance Dashboard</a></li>
+            <li><a ui-sref="other" data-ng-click="btc.showNav = false">Earnings Statement</a></li>
+            <li><a ui-sref="other" data-ng-click="btc.showNav = false">Downline Reports</a></li>
+            <li><a ui-sref="other" data-ng-click="btc.showNav = false">Activity Tracker</a></li>
+            <li><a ui-sref="other" data-ng-click="btc.showNav = false">Start Counting</a></li>
+          </ul>
+          <li> <i class="icon-orders"></i>Orders</li>
+          <ul class="secondary no-dot">
+            <li><a ui-sref="other" data-ng-click="btc.showNav = false">Browse Orders</a></li>
+            <li><a ui-sref="other" data-ng-click="btc.showNav = false">New Personal Order</a></li>
+            <li><a ui-sref="other" data-ng-click="btc.showNav = false">New Customer Order</a></li>
+            <li><a ui-sref="other" data-ng-click="btc.showNav = false">Browse Socials</a></li>
+            <li><a ui-sref="other" data-ng-click="btc.showNav = false">Schedule a Social</a></li>
+            <li><a ui-sref="other" data-ng-click="btc.showNav = false">Subscriptions</a></li>
+          </ul>
+          <li><i class="icon-calendar"> </i>Calendar</li>
+          <ul class="secondary no-dot">
+            <li><a ui-sref="other" data-ng-click="btc.showNav = false">Browse Events</a></li>
+            <li><a ui-sref="other" data-ng-click="btc.showNav = false">Schedule an Event</a></li>
+          </ul>
+          <li> <i class="icon-training"></i>Training</li>
+          <ul class="secondary no-dot">
+            <li><a ui-sref="other" data-ng-click="btc.showNav = false">Business</a></li>
+            <li><a ui-sref="other" data-ng-click="btc.showNav = false">Product</a></li>
+            <li><a ui-sref="other" data-ng-click="btc.showNav = false">Env. Health &amp; Safety</a></li>
+            <li><a ui-sref="other" data-ng-click="btc.showNav = false">Training by Topic</a></li>
+          </ul>
+          <li><i class="icon-tools"></i>Tools</li>
+          <ul class="secondary no-dot">
+            <li><a ui-sref="other" data-ng-click="btc.showNav = false">Sales</a></li>
+            <li><a ui-sref="other" data-ng-click="btc.showNav = false">Marketing</a></li>
+            <li><a ui-sref="other" data-ng-click="btc.showNav = false">Events</a></li>
+            <li><a ui-sref="other" data-ng-click="btc.showNav = false">Target</a></li>
+            <li><a ui-sref="other" data-ng-click="btc.showNav = false">FAQ</a></li>
+            <li><a ui-sref="other" data-ng-click="btc.showNav = false">Press</a></li>
+            <li><a ui-sref="other" data-ng-click="btc.showNav = false">Admin Tools</a></li>
+          </ul>
+          <li><i class="icon-communication"></i>Communication</li>
+          <ul class="secondary no-dot">
+            <li><a ui-sref="other" data-ng-click="btc.showNav = false">Calls</a></li>
+            <li><a ui-sref="other" data-ng-click="btc.showNav = false">Support</a></li>
+          </ul>
+        </ul>
+      </div>
+    </div>
+    <div data-ng-class="{'open':btc.showProfile}" class="profile-panel hidden-md-up">
+      <div data-ng-click="btc.showProfile = false" class="closer"><i class="fa fa-close closeicon"></i></div>
+      <div class="big-profile-image"><img src="images/profile-pic.jpg" alt="Winona Ryder"></div>
+      <div class="consultant-info">
+        <h1>Annie Jones</h1>
+        <h2>Status: Consultant | Active since: 2014</h2>
+      </div>
+      <ul class="account-details-nav no-dot">
+        <li><a href="#">Edit Profile</a></li>
+        <li><a href="#">Visit Your Storefront</a></li>
+        <li><a href="#">Performance Dashboard</a></li>
+        <li><a href="#">Disbursement Profiles</a></li>
+        <li><a href="#">Addresses</a></li>
+        <li><a href="#">Payment Profiles</a></li>
+        <li><a href="#">Sign Out</a></li>
+      </ul>
+    </div>
+    <div data-ng-class="{'reveal':btc.showNav, 'fixed':btc.showProfile}" class="holder">
+      <header data-ng-cloak class="container-fluid">
+        <div class="row is-flex">
+          <div class="main-nav col-md-5 col-xs-3">
+            <div id="nav-icon" data-ng-click="btc.showNavCalc()" data-ng-class="{'open':btc.showNav}" class="nav-icon"><span></span><span></span><span></span><span></span></div>
+            <div class="logo hidden-sm-down"><a ui-sref="home"><i class="icon-btc-logo"></i></a></div>
+          </div>
+          <div class="logo col-xs-6 hidden-md-up"><a ui-sref="home"><i class="icon-btc-logo"></i></a></div>
+          <div class="account-info col-md-7 col-xs-3">
+            <div class="notification hidden-md-down">
+              <div data-ng-click="btc.showAlerts = true;" class="notification-message">
+                <div class="notification-icon"><i class="icon-notification"></i>
+                  <div class="badge">1</div>
+                </div>
+                <div class="notification-text">New notification!  This a brief message that will highlight a topic you should definitely read more about and to do that, you can just click this little button right here</div>
+              </div>
+            </div>
+            <div class="user-profile">
+              <div data-ng-click="btc.showProfile = true" class="profile-image"><img data-ng-src="images/profile-pic.jpg" alt="Annie Jones"></div>
+              <div class="profile-details hidden-sm-down">
+                <div class="welcome">Welcome, <br> Annie Jones!</div>
+                <div class="account-details">
+                  <div class="account-details-link">Account Details</div>
+                  <div class="account-details-target-area">
+                    <div class="account-details-holder">
+                      <div class="account-summary">
+                        <div class="account-gauge"></div>
+                        <div class="account-level"><span class="bold uppercase">Account Level:</span> <span class="italic">Consultant</span><br><span class="bold uppercase">Active Since: </span> <span class="italic">2014</span></div>
+                      </div>
+                      <ul class="account-details-nav no-dot">
+                        <li><a href="#">Performance Dashboard</a></li>
+                        <li><a href="#">Disbursement Profiles</a></li>
+                        <li><a href="#">Addresses</a></li>
+                        <li><a href="#">Payment Profiles</a></li>
+                        <li><a href="#">Sign Out</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+      <div class="notifications-mob hidden-md-up">
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="notification-text"><i class="icon-notification"></i>New notification!  This a brief message that will highlight a topic you should definitely read more about and to do that, you can just click this little button right here</div>
+          </div>
+        </div>
+      </div>
+      <div data-ng-click="btc.closer($event)" data-ng-class="{'nav-open':btc.showNav}" class="container content">
+        <div data-ui-view></div>
+        <div data-ng-class="{'active':btc.loading}" class="loader"><i class="icon-bc-logo"></i></div>
+      </div>
+    </div>
+  </body>
+  <div data-ng-class="{'open':btc.showAlerts}" class="alert-content"><i data-ng-click="btc.showAlerts = false;" class="fa fa-close closeicon"></i>
+    <!-- BC TypeKit-->
+    <script src="//use.typekit.net/niv7nci.js"></script>
+    <!-- build:js scripts/vendor.js-->
+    <!-- bower:js-->
+    <script src="/bower_components/jquery/dist/jquery.js"></script>
+    <script src="/bower_components/modernizr/modernizr.js"></script>
+    <script src="/bower_components/tether/dist/js/tether.js"></script>
+    <script src="/bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="/bower_components/angular/angular.js"></script>
+    <script src="/bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <!-- endbower-->
+    <!-- endbuild-->
+    <!-- build:js scripts/plugins.js-->
+    <!-- endbuild-->
+    <!-- build:js scripts/main.js-->
+    <script src="scripts/main.js"></script>
+    <!-- endbuild-->
+  </div>
+</html>
